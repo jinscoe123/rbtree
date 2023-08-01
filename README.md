@@ -113,6 +113,8 @@ preprocessor macro. A value of 1, tells it to check once per fuzzed input, while
 greater tells it to check after every insert or delete operation. By default, if you leave it unset,
 then the red-black tree properties are not checked, and the fuzzer will only detect memory errors.
 
+![AFL fuzzing output](fuzz.png)
+
 ### Stress
 
 The [stress.c](stress.c) file implements a simple utility to benchmark insert, delete, and search
