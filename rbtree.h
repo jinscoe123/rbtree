@@ -148,6 +148,10 @@ int rbtree_visit(rbtree_t const* tree, rbnode_dir_f_t dir, void* arg);
 int rbtree_visit_in_order(rbtree_t const* tree, rbnode_dir_f_t fun, void* arg);
 
 
+rbnode_t* rbtree_head(rbtree_t const* tree);
+
+rbnode_t* rbtree_tail(rbtree_t const* tree);
+
 rbnode_t* rbnode_next(rbnode_t const* node);
 
 rbnode_t* rbnode_prev(rbnode_t const* node);

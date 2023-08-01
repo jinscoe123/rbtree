@@ -610,6 +610,41 @@ int rbtree_visit_in_order(rbtree_t const* T, rbnode_dir_f_t fun, void* arg)
 }
 
 
+/** @brief Get the head node of a red-black tree.
+ *
+ *  @param[in] T A red-black tree pointer.
+ *
+ *  @return A pointer to the head node of the red-black tree, or NULL if the tree is empty.
+ */
+rbnode_t* rbtree_head(rbtree_t const* T)
+{
+    rbnode_t* N = T->root;
+    if (N) {
+        while (N->branch[0]) {
+            N = N->branch[0];
+        }
+    }
+    return N;
+}
+
+/** @brief Get the tail node in a red-black tree.
+ *
+ *  @param[in] T A red-black tree pointer.
+ *
+ *  @return A pointer to the tail node of the red-black tree, or NULL if the tree is empty.
+ */
+rbnode_t* rbtree_tail(rbtree_t const* T)
+{
+    rbnode_t* N = T->root;
+    if (N) {
+        while (N->branch[1]) {
+            N = N->branch[1];
+        }
+    }
+    return N;
+}
+
+
 /** @brief Get the next node in a red-black tree.
  *
  *  @param[in] N A red-black node pointer.
