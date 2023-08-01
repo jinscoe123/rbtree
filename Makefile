@@ -15,6 +15,10 @@ OBJS := $(SRCS:.c=.o)
 .PHONY: all
 all: $(EXE)
 
+.PHONY: doc
+doc:
+	doxygen
+
 fuzzer: fuzzer.c $(HDRS) $(OBJS) Makefile
 	$(CC) $(CFLAGS) $(LIBS) -o $@ $< $(OBJS)
 
